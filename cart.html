@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Ikawa House</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body data-page="cart">
+  <nav>
+    <div class="logo">
+      <img src="logo.svg" alt="Ikawa House Logo">
+      <span class="site-name">Ikawa House</span>
+    </div>
+    <div class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Services.html">Menu</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="cart.html">🛒 Cart <span class="cart-badge" id="cart-badge" style="display:none"></span></a>
+      <span id="auth-links" style="display:contents"></span>
+    </div>
+  </nav>
+
+  <section>
+    <h2>Your Cart</h2>
+    <div id="cart-root"></div>
+
+    <div id="order-section" style="display:none">
+    <h3 id="order" style="text-align: center; color: var(--primary-color);">Place Your Order</h3>
+    <div id="order-box"></div>
+    <div id="order-form-wrap" style="display:none">
+    <form id="order-form">
+      <div class="summary" style="box-shadow:none;padding:0 0 15px;">
+        <h4 style="color: var(--primary-color);margin:0 0 10px;">🧾 Order Summary</h4>
+        <div class="sum-row"><span>Subtotal</span><span id="sum-subtotal"></span></div>
+        <div class="sum-row"><span>Delivery fee</span><span id="fee"></span></div>
+        <div class="sum-row total"><span>Total</span><span id="total"></span></div>
+      </div>
+
+      <label for="client-name">Your Name:</label>
+      <input type="text" id="client-name" name="client_name" maxlength="100" placeholder="Enter your full name" required>
+
+      <label for="delivery-type">Delivery Speed:</label>
+      <select id="delivery-type" name="delivery_type">
+        <option value="standard">Standard Delivery (Free over 10K RWF)</option>
+        <option value="express">Express Delivery (+1,000 RWF)</option>
+      </select>
+
+      <label for="address">Delivery Address / Neighborhood:</label>
+      <input type="text" id="address" name="address" maxlength="150" placeholder="e.g., Kicukiro, Niboye" required>
+
+      <label for="street">Street Number / Landmark:</label>
+      <input type="text" id="street" name="street" maxlength="150" placeholder="e.g., KK 311 St / Near Kicukiro Sector Office" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" name="phone" placeholder="e.g., +250 794 388 164" required>
+
+      <label for="payment">Payment Method:</label>
+      <select id="payment" name="payment">
+        <option value="momo">Mobile Money (MTN MoMo / Airtel Money)</option>
+        <option value="card">Visa / Mastercard (Local & International)</option>
+        <option value="debit">Rwandan Debit Card (SmartCash / RSwitch)</option>
+        <option value="bank">Local Bank Transfer (BK, I&M, Equity)</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+      <p class="muted sm" style="margin-top:-12px;">🔒 Demo mode: payment is simulated - no real money is charged and card details are never stored.</p>
+
+      <div id="card-payment-fields" style="display:none; margin-top: 20px; padding: 20px; background-color: #fcfbf9; border: 1px dashed var(--accent-color); border-radius: 8px;">
+        <h4 style="color: var(--primary-color); margin-top: 0; margin-bottom: 15px; border-bottom: 1px solid #e2dcd5; padding-bottom: 5px;">💳 Card Details</h4>
+
+        <label for="card-name">Cardholder Name:</label>
+        <input type="text" id="card-name" name="card_name" autocomplete="off" placeholder="Name as it appears on card">
+
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card_number" maxlength="23" inputmode="numeric" autocomplete="off" placeholder="0000 0000 0000 0000">
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+          <div>
+            <label for="card-expiry">Expiry Date:</label>
+            <input type="text" id="card-expiry" name="card_expiry" maxlength="5" autocomplete="off" placeholder="MM/YY">
+          </div>
+          <div>
+            <label for="card-cvv">CVV / CVC:</label>
+            <input type="password" id="card-cvv" name="card_cvv" maxlength="4" inputmode="numeric" autocomplete="off" placeholder="3 or 4 digits">
+          </div>
+        </div>
+      </div>
+      <p id="bank-note" class="muted sm" style="display:none;">Bank transfer: your order is saved as <em>pending</em> and will be marked as paid once we confirm your transfer.</p>
+
+      <label for="notes">Special Instructions (Optional):</label>
+      <textarea id="notes" name="notes" rows="3" maxlength="500" style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #DCD6CD; border-radius: 8px; box-sizing: border-box; background-color: #FCFBF9; font-size: 15px; font-family: inherit;" placeholder="e.g., Extra sugar, no milk..."></textarea>
+
+      <button type="submit" class="order-btn" style="width: 100%; border-radius: 8px; margin-top: 10px;">Confirm Order</button>
+    </form>
+    </div>
+    </div>
+  </section>
+  <footer>
+    <p>📍 KK 311 St, Kicukiro, Kigali | 📞 +250 794 388 164 | ✉️ info@coffeeandsnacks.com</p>
+    <p>&copy; 2026 Ikawa House. All rights reserved.</p>
+  </footer>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Menu - Ikawa House</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body data-page="menu">
+
+  <nav>
+    <div class="logo">
+      <img src="logo.svg" alt="Ikawa House Logo">
+      <span class="site-name">Ikawa House</span>
+    </div>
+    <div class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Services.html">Menu</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="cart.html">🛒 Cart <span class="cart-badge" id="cart-badge" style="display:none"></span></a>
+      <span id="auth-links" style="display:contents"></span>
+    </div>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Our Café Menu</h2>
+
+      <form id="filter-bar" class="filter-bar">
+        <input type="text" id="f-q" placeholder="Search the menu..." aria-label="Search">
+        <select id="f-category" aria-label="Category"><option value="">All categories</option></select>
+        <select id="f-sort" aria-label="Sort">
+          <option value="">Sort: Category</option><option value="price_asc">Price: low to high</option><option value="price_desc">Price: high to low</option><option value="name">Name A-Z</option>
+        </select>
+        <label class="check"><input type="checkbox" id="f-avail"> Available only</label>
+        <a href="#" id="f-reset" class="reset" style="display:none">Reset</a>
+      </form>
+
+      <!-- the items are filled in from MySQL by js/menu.js -->
+      <div id="menu-root"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>📍 KK 311 St, Kicukiro, Kigali | 📞 +250 794 388 164 | ✉️ info@coffeeandsnacks.com</p>
+    <p>&copy; 2026 Ikawa House. All rights reserved.</p>
+  </footer>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

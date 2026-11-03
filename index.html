@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ikawa House - Home</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body data-page="home">
+
+  <nav>
+    <div class="logo">
+      <img src="logo.svg" alt="Ikawa House Logo">
+      <span class="site-name">Ikawa House</span>
+    </div>
+    <div class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Services.html">Menu</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="cart.html">🛒 Cart <span class="cart-badge" id="cart-badge" style="display:none"></span></a>
+      <span id="auth-links" style="display:contents"></span>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Delicious Coffee & Snacks</h1>
+    <p>Premium Rwandan coffee beans & freshly baked treats, delivered to Kicukiro and all Kigali right at your doorstep.</p>
+    <div style="margin-top: 20px;">
+      <a href="Services.html" class="order-btn" style="padding: 14px 30px; font-size: 1.1em; margin-right: 10px;">Explore Our Menu</a>
+      <a href="cart.html#order" class="order-btn" style="padding: 14px 30px; font-size: 1.1em; background-color: transparent; border: 2px solid var(--btn-color); color: #fff;">Order Now</a>
+    </div>
+  </header>
+
+  <section class="features">
+    <div class="feature">
+      <span>☕</span>
+      <h3>Premium Quality</h3>
+      <p style="color: #666; font-size: 0.9em;">100% locally sourced, freshly roasted Rwandan coffee beans.</p>
+    </div>
+    <div class="feature">
+      <span>🥐</span>
+      <h3>Fresh Daily</h3>
+      <p style="color: #666; font-size: 0.9em;">Snacks and pastries baked with love every single morning.</p>
+    </div>
+    <div class="feature">
+      <span>🛵</span>
+      <h3>Lightning Delivery</h3>
+      <p style="color: #666; font-size: 0.9em;">Hot and fresh to your home or office in 30-45 minutes.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our Best Sellers</h2>
+    <div class="items" id="featured-items"></div>
+  </section>
+
+  <section class="testimonials" id="reviews">
+    <h2>What Our Customers Say</h2>
+    <div id="review-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left; margin-top: 20px;"></div>
+
+    <form id="review-form" style="display:none; text-align:left;">
+      <h3 style="margin-top:0; color: var(--primary-color);">Leave a review</h3>
+      <label for="rating">Rating:</label>
+      <select id="rating" required>
+        <option value="5">★★★★★ (5)</option><option value="4">★★★★ (4)</option><option value="3">★★★ (3)</option><option value="2">★★ (2)</option><option value="1">★ (1)</option>
+      </select>
+      <label for="comment">Your comment:</label>
+      <textarea id="comment" rows="3" maxlength="500" required></textarea>
+      <button type="submit" class="order-btn" style="width: 100%; border-radius: 8px;">Submit Review</button>
+    </form>
+    <p id="review-login" style="display:none; margin-top:25px;"><a href="login.html">Log in</a> to leave a review.</p>
+  </section>
+
+  <section id="report" style="background-color: #fff; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.03); padding: 40px 20px; margin-top: 50px;">
+    <h2 style="margin-bottom: 10px;">Customer Report Center</h2>
+    <p style="text-align: center; color: #666; max-width: 600px; margin: 0 auto 30px auto; font-size: 0.95em;">
+      Your satisfaction is our priority. If you faced any issues with your delivery time, food quality, card/MoMo payment, or driver behavior, please lodge a report below.
+    </p>
+
+    <form id="report-form" style="margin-top: 0; box-shadow: none; padding: 0; max-width: 600px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <div>
+          <label for="report-name">Your Name:</label>
+          <input type="text" id="report-name" name="report_name" placeholder="Full Name" required>
+        </div>
+        <div>
+          <label for="report-phone">Phone Number:</label>
+          <input type="text" id="report-phone" name="report_phone" placeholder="e.g., +250 798..." required>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+        <div>
+          <label for="order-id">Order ID (Optional):</label>
+          <input type="text" id="order-id" name="order_id" placeholder="e.g., 1024">
+        </div>
+        <div>
+          <label for="report-type">Issue Type:</label>
+          <select id="report-type" name="report_type" required>
+            <option value="delivery">Delayed Delivery</option>
+            <option value="food">Food Quality / Wrong Item</option>
+            <option value="payment">Payment Issue (MoMo / Card)</option>
+            <option value="staff">Staff / Driver Behavior</option>
+            <option value="other">Other Technical Issues</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="report-details">Detailed Description:</label>
+      <textarea id="report-details" name="report_details" rows="4" style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #DCD6CD; border-radius: 8px; box-sizing: border-box; background-color: #FCFBF9; font-size: 15px; font-family: inherit;" placeholder="Please describe what happened in detail so we can fix it immediately..." required></textarea>
+
+      <button type="submit" class="order-btn" style="width: 100%; border-radius: 8px; background-color: #D4A373;">Submit Report</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>📍 KK 311 St, Kicukiro, Kigali | 📞 +250 794 388 164 | ✉️ info@coffeeandsnacks.com</p>
+    <p>&copy; 2026 Ikawa House. All rights reserved.</p>
+  </footer>
+
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

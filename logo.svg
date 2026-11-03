@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="Ikawa House logo">
+  <circle cx="50" cy="50" r="50" fill="#FDFBF7"/>
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#D4A373" stroke-width="2"/>
+  <path d="M38 24c-4 4 4 7 0 11M50 21c-4 4 4 7 0 11M62 24c-4 4 4 7 0 11" fill="none" stroke="#E65F2B" stroke-width="3" stroke-linecap="round"/>
+  <path d="M24 42h46v14c0 12-9 21-23 21S24 68 24 56z" fill="#4A2C2A"/>
+  <path d="M70 46h5c6 0 9 3 9 8s-4 9-10 9h-4" fill="none" stroke="#4A2C2A" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="47" cy="42" rx="23" ry="4" fill="#7B3F32"/>
+  <path d="M30 80h34" stroke="#D4A373" stroke-width="4" stroke-linecap="round"/>
+</svg>

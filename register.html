@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Register - Ikawa House</title>
+
+  <link rel="stylesheet" href="Style.css">
+</head>
+
+<body data-page="register">
+
+  <nav>
+    <div class="logo">
+      <img src="logo.svg" alt="Ikawa House Logo">
+      <span class="site-name">Ikawa House</span>
+    </div>
+  </nav>
+
+  <section>
+    <h2>Create an Account</h2>
+
+    <form id="register-form" action="register.php" method="POST">
+
+      <label for="name">Full Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        maxlength="100"
+        required>
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        maxlength="150"
+        required>
+
+      <label for="phone">Phone Number:</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="e.g., +250 794 388 164"
+        required>
+
+      <label for="password">
+        Password:
+      </label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        minlength="4"
+        required>
+
+      <label for="password2">Confirm Password:</label>
+      <input
+        type="password"
+        id="password2"
+        name="confirm_password"
+        minlength="4"
+        required>
+
+      <button class="order-btn full" type="submit">
+        Register
+      </button>
+
+      <p class="center sm">
+        Already have an account?
+        <a href="login.html">Log in</a>
+      </p>
+
+    </form>
+  </section>
+
+  <footer>
+    <p>
+      📍 KK 311 St, Kicukiro, Kigali |
+      📞 +250 794 388 164 |
+      ✉️ info@coffeeandsnacks.com
+    </p>
+
+    <p>
+      &copy; 2026 Ikawa House.
+      All rights reserved.
+    </p>
+  </footer>
+
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+
+</body>
+</html>
